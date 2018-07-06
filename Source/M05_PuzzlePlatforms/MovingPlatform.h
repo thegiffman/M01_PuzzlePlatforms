@@ -20,8 +20,14 @@ public:
 	UPROPERTY(EditAnywhere)
 	float MoveSpeed = 5;
 
+	UPROPERTY(EditAnywhere, Meta = (MakeEditWidget = true))
+	FVector TargetLocation;
+
 protected:
 	virtual void Tick(float DeltaTime) override;
 
 	virtual void BeginPlay() override;
+
+	FVector GlobalTargetLocation;
+	FVector GlobalStartLocation;
 };
